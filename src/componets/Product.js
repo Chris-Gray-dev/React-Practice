@@ -3,7 +3,7 @@ import React from 'react';
 function Product(props)
 {
     var price = ""
-    if(props.Price == 0)
+    if(props.Price === 0)
     {
         price ="Free!"
     }
