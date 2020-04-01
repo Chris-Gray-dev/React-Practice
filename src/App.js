@@ -17,15 +17,42 @@ import TodoList from './componets/TodoList'
 
 //import products from './Data/products';
 //import Product from "./componets/Product";
-function App() {
+//function App() {
+//
+//  return (
+//    <div className="App">
+//      <header className="App-header">
+//        <TodoList />
+//      </header>
+//    </div>
+//  );
+//}
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <TodoList />
-      </header>
-    </div>
-  );
+//import Counter from './componets/Counter'
+
+//import Conditional from './componets/Conditional'
+
+//import LoginButton from "./componets/LoginButton"
+
+class App extends React.Component
+{
+  constructor()
+  {
+    super()
+    this.state={
+      loggedIn: false
+    }
+  }
+  render()
+  {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <TodoList />
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
