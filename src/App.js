@@ -10,7 +10,7 @@ import './App.css';
 //import MainContent from './componets/MainContent'
 //import Footer from'./componets/Footer'
 
-import TodoList from './componets/TodoList'
+
 
 //import Joke from './componets/Joke'
 //import jokesData from './Data/jokesData'
@@ -34,25 +34,35 @@ import TodoList from './componets/TodoList'
 
 //import LoginButton from "./componets/LoginButton"
 
+
+//import TodoList from './componets/TodoList' // DONE!!!!
+import TravelForm from './componets/TravelForm'
 class App extends React.Component
 {
   constructor()
   {
     super()
     this.state={
-      loggedIn: false
+
     }
+   
   }
+  componentDidMount()
+  {
+    console.log("mounted")
+  }
+
+  
   render()
   {
     return (
       <div className="App">
         <header className="App-header">
-          <TodoList />
+          <TravelForm />
         </header>
       </div>
     );
   }
 }
 
-export default App;
+export default App
