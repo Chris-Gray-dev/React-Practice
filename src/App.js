@@ -35,21 +35,18 @@ import './App.css';
 //import LoginButton from "./componets/LoginButton"
 
 
-//import TodoList from './componets/TodoList' // DONE!!!!
-import TravelForm from './componets/TravelForm'
+/* Projects that i have done, uncomment and add it to the render method */
+//import TodoList from './componets/TodoList' // DONE!
+//import TravelForm from './componets/TravelForm' // DONE!
+import MemeGenerator from "./componets/MemeGenerator/MemeGenerator"
+
+
 class App extends React.Component
 {
   constructor()
   {
     super()
-    this.state={
-
-    }
-   
-  }
-  componentDidMount()
-  {
-    console.log("mounted")
+    this.state={}
   }
 
   
@@ -58,7 +55,7 @@ class App extends React.Component
     return (
       <div className="App">
         <header className="App-header">
-          <TravelForm />
+          <MemeGenerator />
         </header>
       </div>
     );

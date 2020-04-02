@@ -36,9 +36,32 @@ class TravelForm extends Component {
     handleChanged(event)
     {
         const {type,value,checked,name} = event.target;
-        type==="checkbox"? this.setState({diet:{[name]:checked}})
+        type==="checkbox"? this.setState(prev =>{
+                                return(
+                                    {diet:{...prev.diet,
+                                    [name]:checked}}
+                                )
+                            })
                          : this.setState({[name]:value})
-        console.log(name)
+    }
+
+    diet(diet)
+    {
+        var text = ""
+        if(diet.isVegan)
+        {
+            text = text +" Vegan,"
+        }
+        if(diet.isKosher)
+        {
+            text = text +" Kosher,"
+        }
+        if(diet.isLactoseFree)
+        {
+            text = text +" LF"
+        }
+
+        return text
     }
     
     render() {
@@ -95,7 +118,7 @@ class TravelForm extends Component {
                 <p>Your destination: {this.state.location}</p>
                 <p>
                     Your dietary restrictions: 
-                    {/* Dietary restrictions here, comma separated */}
+                    {this.diet(this.state.diet)}
                 </p>
             </main>
         )
