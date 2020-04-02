@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect} from 'react';
 //import logo from './logo.svg';
 import './App.css';
 
@@ -38,28 +38,36 @@ import './App.css';
 /* Projects that i have done, uncomment and add it to the render method */
 //import TodoList from './componets/TodoList' // DONE!
 //import TravelForm from './componets/TravelForm' // DONE!
-import MemeGenerator from "./componets/MemeGenerator/MemeGenerator"
+//import MemeGenerator from "./componets/MemeGenerator/MemeGenerator" //DONE !
 
 
-class App extends React.Component
-{
-  constructor()
-  {
-    super()
-    this.state={}
-  }
+function App()
+{ 
+    const [count, setCount] = useState(0)
 
-  
-  render()
-  {
+    function inc()
+    {
+      setCount(prev =>(prev +1))
+    }
+
+    useEffect(()=>{
+      console.log("Mounted")
+    },[])
+
+    function dec()
+    {
+      setCount(prev => prev-1)
+    }
     return (
       <div className="App">
         <header className="App-header">
-          <MemeGenerator />
+            <h1>{count}</h1>
+            <button onClick={inc}>Increase!</button>
+            <button onClick={dec}>Decrease!</button>
         </header>
       </div>
     );
-  }
 }
+
 
 export default App
